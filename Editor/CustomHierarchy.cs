@@ -5,7 +5,7 @@ namespace Lazy_Tool.Editor
 {
     public abstract class CustomHierarchy
     {
-        [MenuItem("GameObject/Create Header", priority = 1)]
+        [MenuItem("GameObject/Create Header", priority = 0)]
         private static void CreateHeader()
         {
             var gameObject = new GameObject("Header")
