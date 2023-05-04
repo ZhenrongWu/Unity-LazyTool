@@ -1,6 +1,4 @@
-using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -9,7 +7,7 @@ using UnityEngine;
 namespace Lazy_Tool.Editor
 {
     [InitializeOnLoad]
-    public class Header : MonoBehaviour
+    public class Header
     {
         static Header()
         {
@@ -21,26 +19,29 @@ namespace Lazy_Tool.Editor
             Color fontColor       = Color.white;
             Color backgroundColor = Color.gray;
 
-            var gameObject = EditorUtility.InstanceIDToObject(instanceID);
-            if (gameObject == null) return;
+            var instanceIDToObject = EditorUtility.InstanceIDToObject(instanceID);
+            if (instanceIDToObject == null) return;
 
-            if (!gameObject.GameObject().CompareTag("EditorOnly")) return;
-
-            if (Selection.instanceIDs.Contains(instanceID))
+            foreach (var gameObject in GameObject.FindGameObjectsWithTag("EditorOnly"))
             {
-                backgroundColor = new Color32(64, 160, 255, 255);
-            }
+                if (gameObject != instanceIDToObject) continue;
 
-            Rect rect = new Rect(selectionRect.position, selectionRect.size);
-            EditorGUI.DrawRect(selectionRect, backgroundColor);
-            EditorGUI.LabelField(rect, gameObject.name,
-                new GUIStyle
+                if (Selection.instanceIDs.Contains(instanceID))
                 {
-                    normal    = new GUIStyleState { textColor = fontColor },
-                    fontStyle = FontStyle.Bold,
-                    alignment = TextAnchor.MiddleCenter
+                    backgroundColor = new Color32(64, 160, 255, 255);
                 }
-            );
+
+                Rect rect = new Rect(selectionRect.position, selectionRect.size);
+                EditorGUI.DrawRect(selectionRect, backgroundColor);
+                EditorGUI.LabelField(rect, instanceIDToObject.name,
+                    new GUIStyle
+                    {
+                        normal    = new GUIStyleState { textColor = fontColor },
+                        fontStyle = FontStyle.Bold,
+                        alignment = TextAnchor.MiddleCenter
+                    }
+                );
+            }
         }
     }
 }
