@@ -1,0 +1,47 @@
+.unity-toolbar-button {
+    -unity-text-align: middle-center;
+    flex-grow: 1;
+    -unity-font-style: bold;
+    border-left-width: 0.5px;
+    border-right-width: 0.5px;
+    border-top-width: 0.5px;
+    border-bottom-width: 0.5px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    font-size: 14px;
+}
+
+.unity-button {
+    height: 30px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.unity-popup-field {
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.unity-toggle {
+}
+
+.custom-label {
+    -unity-text-align: middle-center;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    -unity-font-style: bold;
+}
+
+.unity-text-field {
+}
+
+.unity-label {
+    color: rgb(255, 250, 250);
+}

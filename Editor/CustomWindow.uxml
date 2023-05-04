@@ -1,0 +1,33 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/Lazy%20Tool/Editor/CustomWindow.uss?fileID=7433441132597879392&amp;guid=5ee950ca23410244889bcaf9c71b26fb&amp;type=3#CustomWindow" />
+    <ui:VisualElement name="top" style="margin-right: 5px; margin-left: 5px; margin-top: 5px;">
+        <uie:Toolbar name="Toolbar" style="flex-basis: 30px; color: rgb(99, 99, 99);">
+            <uie:ToolbarButton text="Folder" display-tooltip-when-elided="true" name="FolderToolbarButton" />
+            <uie:ToolbarButton text="Build" display-tooltip-when-elided="true" name="BuildToolbarButton" />
+        </uie:Toolbar>
+    </ui:VisualElement>
+    <ui:VisualElement name="mid" style="border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 0.5px; border-right-width: 0.5px; border-top-width: 0.5px; border-bottom-width: 0.5px; flex-grow: 1; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; display: flex; overflow: visible; background-color: rgb(169, 169, 169); -unity-text-outline-color: rgb(255, 255, 255);">
+        <ui:VisualElement name="FolderVisualElement" style="margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; flex-direction: column; display: flex;">
+            <ui:Button text="Create Folders" display-tooltip-when-elided="true" name="CreateFoldersButton" />
+            <ui:Button text="Organizing Files" display-tooltip-when-elided="true" name="OrganizingFilesButton" style="flex-shrink: 0; flex-grow: 1; flex-direction: column; border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; top: auto;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="BuildVisualElement" style="margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; flex-direction: column; display: none;">
+            <ui:DropdownField label="Platform" index="-1" choices="System.Collections.Generic.List`1[System.String]" name="PlatformDropdownField" />
+            <ui:VisualElement name="PCVisualElement" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); display: none;">
+                <ui:Toggle label="Version" name="VersionToggle" />
+                <ui:Button text="Increment" display-tooltip-when-elided="true" name="IncrementButton" />
+            </ui:VisualElement>
+            <ui:VisualElement name="AndroidVisualElement" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); display: none;">
+                <ui:Label tabindex="-1" text="Identification" display-tooltip-when-elided="true" name="IdentificationLabel" class="custom-label" />
+                <ui:Toggle label="Version" name="VersionToggle" />
+                <ui:Toggle label="Bundle Version Code" name="BundleVersionCodeToggle" style="font-size: 11px;" />
+                <ui:Button text="Increment" display-tooltip-when-elided="true" name="IncrementButton" />
+                <ui:Label tabindex="-1" text="Keystore" display-tooltip-when-elided="true" name="KeystoreLabel" class="custom-label" />
+                <ui:TextField picking-mode="Ignore" label="Keystore Password" name="KeystorePasswordTextField" style="flex-shrink: 1;" />
+                <ui:TextField picking-mode="Ignore" label="Key Alias Name" name="KeyAliasNameTextField" />
+                <ui:TextField picking-mode="Ignore" label="Key Alias Password" name="KeyAliasPasswordTextField" />
+                <ui:Button text="Save" display-tooltip-when-elided="true" name="SaveKeystoreButton" style="margin-top: 3px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
