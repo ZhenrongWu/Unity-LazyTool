@@ -321,7 +321,7 @@ namespace Lazy_Tool.Editor
             string originVersion = PlayerSettings.bundleVersion;
 
             float.TryParse(PlayerSettings.bundleVersion, out float version);
-            version                      += .01f;
+            version                      += 1f;
             PlayerSettings.bundleVersion =  version.ToString(CultureInfo.InvariantCulture);
 
             Debug.Log($"Version: {originVersion} -> {PlayerSettings.bundleVersion}");
@@ -334,7 +334,7 @@ namespace Lazy_Tool.Editor
                 var oldVersion = PlayerSettings.bundleVersion;
 
                 float.TryParse(PlayerSettings.bundleVersion, out var newVersion);
-                newVersion                   += .01f;
+                newVersion                   += 1f;
                 PlayerSettings.bundleVersion =  newVersion.ToString(CultureInfo.InvariantCulture);
 
                 Debug.Log($"Version: {oldVersion} -> {newVersion}");
